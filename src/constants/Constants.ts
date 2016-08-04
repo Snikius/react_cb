@@ -1,6 +1,6 @@
 // Define action constants
 const constants = {
-    LOGIN: 1,
+    AUTOCOMPLETE_READY: 1,
     SEARCH: 2
 };
 

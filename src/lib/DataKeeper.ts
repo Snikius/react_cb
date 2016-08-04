@@ -3,15 +3,15 @@ class DataKeeper
 {
     private static data = [
         "12345",
-        "Pokemon Go",
-        "TypeScript",
-        "Youtube",
-        "JavaScript",
-        "Java",
-        "JavaServer Pages",
-        "jQuery",
-        "Почему трава зеленая",
-        "Почему небо голубое"
+        "pokemon go",
+        "typescript",
+        "youtube",
+        "javascript",
+        "java",
+        "javaserver pages",
+        "jquery",
+        "почему трава зеленая",
+        "почему небо голубое"
     ];
 
     /**
@@ -19,13 +19,14 @@ class DataKeeper
      * @param query
      * @returns {Promise<string[]>|Promise}
      */
-    static fetchData(query: string): Promise
+    static fetchData(query: string): Promise<string[]>
     {
         let handler = function(resolve, reject) {
             setTimeout(()=>{
                 let result:string[] = [];
                 for(let str of DataKeeper.data) {
-                    if(str.startsWith(query)) {
+                    // Если строка начинается с запроса - добавим к результатам
+                    if(str.toLowerCase().indexOf(query) === 0) {
                         result.push(str);
                     }
                 }

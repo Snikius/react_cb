@@ -1,3 +1,5 @@
+
+/*
 import * as React from "react";
 import AppAction from "../actions/AppActions";
 import PostStore from "../stores/PostsStore";
@@ -41,3 +43,4 @@ class SearchForm extends React.Component<{}, {query: string, form_disabled: bool
 }
 
 export default SearchForm;
+*/

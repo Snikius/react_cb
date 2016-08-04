@@ -1,3 +1,5 @@
+
+/*
 import * as React from "react";
 import UserStore from "../stores/UserStore";
 
@@ -30,3 +32,4 @@ class Auth extends React.Component<{}, {name: string}>
 }
 
 export default Auth;
+    */

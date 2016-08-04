@@ -1,3 +1,5 @@
+
+/*
 import * as React from "react";
 import PostData from "../interfaces/PostData";
 import Post from "./Post";
@@ -22,3 +24,4 @@ class PostList extends React.Component<PostListProps, any>
 }
 
 export default PostList;
+*/

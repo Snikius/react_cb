@@ -1,6 +1,6 @@
 
 import AppDispatcher from '../dispatcher/AppDispatcher'
-import Constants from '../constants/PostsConstants'
+import Constants from '../constants/Constants'
 import UserData from "../interfaces/UserData";
 
 export interface AppAction {
@@ -11,20 +11,9 @@ export interface AppAction {
 // Определяем события приложения
 class AppActions
 {
-    // Пользователь инициализирован
-    static userReady(user: UserData):void {
-        console.log("AppActions, user ready", user);
-        let action:AppAction = {
-            actionType: Constants.LOGIN,
-            data: user
-        };
-        // Отправляем событие в диспетчер
-        AppDispatcher.handleAction(action);
-    }
-
     // Поиск
     static search(query: string):void {
-        console.log("AppActions, search", query);
+        console.log("searching: ", query);
         let action:AppAction = {
             actionType: Constants.SEARCH,
             data: {query: query}

@@ -1,3 +1,5 @@
+
+/*
 import * as React from "react";
 import PostData from "../interfaces/PostData";
 
@@ -26,3 +28,4 @@ class Post extends React.Component<PostData, any>
 }
 
 export default Post;
+    */

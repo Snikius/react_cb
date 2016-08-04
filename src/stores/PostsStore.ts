@@ -1,3 +1,5 @@
+
+/*
 import AppDispatcher from '../dispatcher/AppDispatcher'
 import Constants from '../constants/PostsConstants'
 import {EventEmitter} from 'fbemitter';
@@ -47,3 +49,4 @@ class PostsStore extends EventEmitter
 }
 
 export default new PostsStore();
+    */

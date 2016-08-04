@@ -1,3 +1,5 @@
+
+/*
 import * as React from "react";
 import PostList from "./PostList";
 import PostStore from "../stores/PostsStore";
@@ -32,3 +34,4 @@ class PostBox extends React.Component<{}, any> {
 }
 
 export default PostBox;
+*/
