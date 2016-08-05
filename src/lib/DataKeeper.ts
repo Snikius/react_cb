@@ -46,7 +46,7 @@ class DataKeeper
                     }
                 }
                 resolve(result);
-            }, 300)
+            }, 1000)
         };
         // Возвращаем обещание
         return new Promise<string[]>(handler);
@@ -69,7 +69,7 @@ class DataKeeper
                     }
                 }
                 resolve(result);
-            }, 300)
+            }, 1000)
         };
         // Возвращаем обещание
         return new Promise<AutocompleteElemData[]>(handler);

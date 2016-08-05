@@ -10,11 +10,13 @@ class AutocompleteStore extends EventEmitter
     public dispatcherIndex;
     private static $idCounter:number = 0; // Используется для разделения событий если компонентов Autocomplete > 1
     private id:number;
+    public searchState: boolean;
 
     constructor(onSelect: (value: any) => any) {
         super();
         // Состояние по умолчанию
         this.listData = [];
+        this.searchState = false;
         // Регистрируем store в диспетчере
         this.dispatcherIndex = AppDispatcher.register((payload):boolean => {
             let action = payload.action;
@@ -25,6 +27,7 @@ class AutocompleteStore extends EventEmitter
             if(action.actionType == Constants.AUTOCOMPLETE_READY) {
                 // Сохраняем информацию из события
                 this.listData = action.data;
+                this.searchState = false;
                 // Создаем событие о том что элемент должен быть перерисован
                 this.emit('change');
             }

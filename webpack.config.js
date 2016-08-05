@@ -10,19 +10,19 @@ module.exports = {
     output: {
         filename: 'app.js',
         path: __dirname + "/build",
+        publicPath: "/build/"
     },
     resolve: {
         // Add `.ts` and `.tsx` as a resolvable extension.
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
     },
+
     module: {
         loaders: [
             // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
             { test: /\.tsx?$/, loader: 'ts-loader' },
-            { test: /\.(woff|woff2)$/,  loader: "url-loader?limit=10000&mimetype=application/font-woff" },
-            { test: /\.ttf$/,    loader: "file-loader" },
-            { test: /\.eot$/,    loader: "file-loader" },
-            { test: /\.svg$/,    loader: "file-loader" }
+            { test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
+            { test: /\.(ttf|eot)$/, loader: 'file' },
         ]
     },
     plugins: [

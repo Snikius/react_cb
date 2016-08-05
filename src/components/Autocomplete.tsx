@@ -15,14 +15,16 @@ class Autocomplete extends React.Component<AutocompleteInterface, any>
         super(props);
         this.state = {
             query: "",
-            searching: false
+            searching: false,
         };
         this.store = new AutocompleteStore(this.props.onSelect);
     }
     
     render() {
-        return <div>
+        let searchingMark = (this.state.searching) ? <span className="glyphicon glyphicon-refresh form-control-feedback" aria-hidden="true"/> : '';
+        return <div className="form-group has-feedback">
                     <input className="form-control" type="text" value={this.state.query} onChange={this.handleChange.bind(this)} />
+                    {searchingMark}
                     <AutocompleteList baseId={this.store.baseId} itemRender={this.props.itemRender} list={this.store.list} />
                 </div>;
     }
@@ -34,7 +36,6 @@ class Autocomplete extends React.Component<AutocompleteInterface, any>
         if(event.target.value.length >= Parameters.AUTOCOMPLETE_STR_MIN) {
             searching = true;
             this.props.fetchData(event.target.value).then((values: string[]) => {
-                console.log(values);
                 // Формируем обьект события
                 action = {
                     actionType: Constants.AUTOCOMPLETE_READY,
@@ -55,13 +56,14 @@ class Autocomplete extends React.Component<AutocompleteInterface, any>
         }
         // Сохраняем текущий текст в store
         this.store.currentText = event.target.value;
+        this.store.searchState = searching;
         this.setState({query: this.store.currentText, searching: searching, listStore: this.state.listStore});
     }
     
     onChange() {
         this.setState({
             query: this.store.currentText,
-            searching: this.state.searching,
+            searching: this.store.searchState,
             listStore: this.state.listStore,
         });
     }
