@@ -1,3 +1,19 @@
+
+# Данные автодополнения
+
+* 12345
+* pokemon go
+* typescript
+* youtube
+* javascript
+* java
+* javaserver pages
+* jquery
+* почему трава зеленая
+* почему небо голубое
+
+
+
 # Тестовое задание
 ```
 <Autocomplete
