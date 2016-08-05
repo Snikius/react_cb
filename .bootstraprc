@@ -1,0 +1,10 @@
+{
+  "styleLoaders": ["style", "css", "sass"],
+  "bootstrapVersion": 3,
+  "styles": true,
+
+  "scripts": {
+    "alert": true,
+    "button": true
+  }
+}

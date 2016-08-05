@@ -7,6 +7,12 @@
   "installed": {
     "es6-promise/es6-promise.d.ts": {
       "commit": "3bbe35a4cfdf09bd2a87ed660bf918131679da19"
+    },
+    "bootstrap/bootstrap.d.ts": {
+      "commit": "e65947027120a0dc77723266906e4ce6c28bd725"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "e65947027120a0dc77723266906e4ce6c28bd725"
     }
   }
 }

@@ -1,16 +1,13 @@
 import Flux = require('flux');
-import {AppAction} from './../actions/AppActions';
+import AppAction from '../interfaces/AppAction';
 
-export interface DispatcherAction {
-    source: string,
-    action: AppAction
-}
+
 
 class AppDispatcher extends Flux.Dispatcher<any>
 {
     // Произошло изменение
     handleAction(appAction: AppAction):void {
-        let action:DispatcherAction = {
+        let action = {
             source: 'VIEW_ACTION',
             action: appAction
         };
@@ -18,4 +15,4 @@ class AppDispatcher extends Flux.Dispatcher<any>
     }
 }
 
-export default new AppDispatcher();
+export default new AppDispatcher;

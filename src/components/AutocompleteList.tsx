@@ -1,19 +1,22 @@
 import * as React from "react";
+import ElementWrapper from "./ElementWrapper";
 
-class AutocompleteList extends React.Component<{list: any[], itemRender: any}, any>
+class AutocompleteList extends React.Component<{list: any[], itemRender: any, baseId: number}, any>
 {
     constructor(props) {
         super(props);
     }
     render() {
         let list = this.props.list;
-        console.log(list);
         return (
-            <div className="autocompleteList">
-                { list.map((item: any) => {
-                    return this.props.itemRender(item);
+            <ul className="nav nav-pills nav-stacked">
+                { list.map((item: any, index:number) => {
+                    return <ElementWrapper itemRender={this.props.itemRender}
+                                           item={item}
+                                           baseId={this.props.baseId}
+                                           key={index} />;
                 })}
-            </div>
+            </ul>
         );
     }
 }

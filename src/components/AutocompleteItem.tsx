@@ -1,15 +1,14 @@
 import * as React from "react";
-import ElementData from "../interfaces/ElementData";
 
-class AutocompleteItem extends React.Component<ElementData, any>
+class AutocompleteItem extends React.Component<{item: string}, any>
 {
     constructor(props) {
         super(props);
     }
     render() {
-        return <div>
+        return <span>
             {this.props.item}
-        </div>;
+        </span>;
     }
 }
 
