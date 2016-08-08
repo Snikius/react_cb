@@ -32,6 +32,8 @@ class Autocomplete extends React.Component<AutocompleteInterface, any>
     handleChange(event) {
         let searching = false;
         let action:AppAction;
+        // Очищаем список
+        this.store.flush();
         // Если пользователь ввел строку больше или равной минимальной - начинаем поиск
         if(event.target.value.length >= Parameters.AUTOCOMPLETE_STR_MIN) {
             searching = true;
@@ -57,14 +59,13 @@ class Autocomplete extends React.Component<AutocompleteInterface, any>
         // Сохраняем текущий текст в store
         this.store.currentText = event.target.value;
         this.store.searchState = searching;
-        this.setState({query: this.store.currentText, searching: searching, listStore: this.state.listStore});
+        this.setState({query: this.store.currentText, searching: searching});
     }
     
     onChange() {
         this.setState({
             query: this.store.currentText,
             searching: this.store.searchState,
-            listStore: this.state.listStore,
         });
     }
 

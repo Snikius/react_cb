@@ -44,6 +44,10 @@ class AutocompleteStore extends EventEmitter
         this.id = this.newId;
     }
 
+    public flush() {
+        this.listData = [];
+    }
+
     get newId(): number {
         return AutocompleteStore.$idCounter++;
     }
